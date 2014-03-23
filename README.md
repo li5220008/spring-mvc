@@ -1,4 +1,4 @@
-spring-mvc
-==========
+springMVC
+=========
 
 my spring mvc app
