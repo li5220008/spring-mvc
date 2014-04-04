@@ -16,6 +16,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--处理器-->
+    <bean name="/hello" class="com.gtafe.web.controller.HelloWorldController"/>
 </beans>
 
 <!--

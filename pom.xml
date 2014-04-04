@@ -49,6 +49,16 @@
           <artifactId>jstl</artifactId>
           <version>1.2</version>
       </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+          <version>1.9.1</version>
+      </dependency>
 
       <!--
       http://blog.csdn.net/mr_tank_/article/details/12159297
