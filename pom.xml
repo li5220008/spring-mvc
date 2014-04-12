@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gta.app</groupId>
   <artifactId>spring-mvc</artifactId>
@@ -71,7 +72,11 @@
           <artifactId>commons-beanutils</artifactId>
           <version>1.9.1</version>
       </dependency>
-
+      <dependency>
+          <groupId>com.sybase.jdbcx</groupId>
+          <artifactId>jconn3</artifactId>
+          <version>6.0</version>
+      </dependency>
       <!--
       http://blog.csdn.net/mr_tank_/article/details/12159297
       <dependency>
@@ -209,6 +214,64 @@
                   <skip>true</skip>
               </configuration>
           </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-install-plugin</artifactId>
+              <version>2.4</version>
+              <configuration>
+                  <groupId>com.sybase.jdbcx</groupId>
+                  <artifactId>jconn3</artifactId>
+                  <version>6.0</version>
+                  <packaging>jar</packaging>
+                  <file>${basedir}/src/libs/jconn3-6.0.jar</file>
+              </configuration>
+              <executions>
+                  <execution>
+                      <id>install-jar-lib</id>
+                      <goals>
+                          <goal>install-file</goal>
+                      </goals>
+                      <phase>validate</phase>
+                  </execution>
+              </executions>
+          </plugin>
+
+          <!--<plugin>
+              <artifactId>maven-install-plugin</artifactId>
+              <version>2.4</version>
+              <inherited>false</inherited>
+              <executions>
+                  <execution>
+                      <id>install-artifacts.1</id>
+                      <goals>
+                          <goal>install-file</goal>
+                      </goals>
+                      <phase>validate</phase>
+                      <configuration>
+                          <file>${basedir}/libs/ojdbc14.jar</file>
+                          <groupId>org.oracle</groupId>
+                          <artifactId>oraclejdbc</artifactId>
+                          <packaging>jar</packaging>
+                          <version>14</version>
+                      </configuration>
+                  </execution>
+                  <execution>
+                      <id>install-artifacts.2</id>
+                      <goals>
+                          <goal>install-file</goal>
+                      </goals>
+                      <phase>validate</phase>
+                      <configuration>
+                          <file>${basedir}/libs/foundation-1.0.jar</file>
+                          <groupId>org.bg</groupId>
+                          <packaging>jar</packaging>
+                          <artifactId>foundation</artifactId>
+                          <version>1.0</version>
+                      </configuration>
+                  </execution>
+              </executions>
+          </plugin>-->
       </plugins>
   </build>
 </project>
+
