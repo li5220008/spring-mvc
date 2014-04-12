@@ -49,10 +49,22 @@
           <artifactId>jstl</artifactId>
           <version>1.2</version>
       </dependency>
+      <!--
+      java.lang.LinkageError: loader constraint violation
+        是由于容器提供的包和web应用引入的包冲突引起的。
+        通过maven排除重复引用后解决。具体参见以下指引：
+
+        引入servlet依赖，并把其scope设置为provided
       <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>servlet-api</artifactId>
           <version>2.5</version>
+      </dependency>-->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>commons-beanutils</groupId>
