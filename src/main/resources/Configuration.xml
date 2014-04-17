@@ -10,6 +10,6 @@
  -->
 <configuration>
  <typeAliases> 
-        <typeAlias alias="User" type="com.gtafe.domain.User"/>
+        <typeAlias alias="User" type="com.gtafe.model.User"/>
     </typeAliases>  
 </configuration>
