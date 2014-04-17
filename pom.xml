@@ -13,9 +13,10 @@
       <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
-          <version>3.8.1</version>
-          <scope>test</scope>
+          <version>4.10</version>
       </dependency>
+
+
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-context</artifactId>
@@ -67,16 +68,37 @@
           <version>2.5</version>
           <scope>provided</scope>
       </dependency>
+
+      <!--mybatis-->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.2.3</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.1.0</version>
+      </dependency>
+
+      <!--apache commons-->
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-pool</groupId>
+          <artifactId>commons-pool</artifactId>
+          <version>1.6</version>
+      </dependency>
       <dependency>
           <groupId>commons-beanutils</groupId>
           <artifactId>commons-beanutils</artifactId>
           <version>1.9.1</version>
       </dependency>
-      <dependency>
-          <groupId>com.sybase.jdbcx</groupId>
-          <artifactId>jconn3</artifactId>
-          <version>6.0</version>
-      </dependency>
+
+
       <!--
       http://blog.csdn.net/mr_tank_/article/details/12159297
       <dependency>
@@ -184,14 +206,14 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${springversion}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-      -->
+         -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>3.2.8.RELEASE</version>
+      </dependency>
+
+
   </dependencies>
   <build>
     <finalName>spring-mvc</finalName>
