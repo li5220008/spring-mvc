@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    @RequestMapping(value = {"/login"}, method = {RequestMethod.GET})
+    @RequestMapping("/login")
     public ModelAndView login() {
         ModelAndView mv = new ModelAndView();
         return mv;
