@@ -37,8 +37,8 @@
                useGeneratedKeys="true" keyProperty="uid"
        --> 
     <insert id="addUser" parameterType="User"> 
-        insert into tb_user(username,password,userAge,userAddress)  
-             values(#{username},#{password},#{userAge},#{userAddress})  
+        insert into tb_user(username,password,userAge,userAddress,birthday)
+             values(#{username},#{password},#{userAge},#{userAddress},#{birthday})
     </insert>
     
     <update id="updateUser" parameterType="User" >
@@ -46,7 +46,7 @@
     </update>
     
     <delete id="deleteUser" parameterType="int">
-        delete from user where id=#{id}
+        delete from tb_user where id=#{id}
     </delete>
   <select id="getDataByPage" statementType="CALLABLE"  parameterType="Map" resultMap="resultListUser">  
     {call GetDataByPage(

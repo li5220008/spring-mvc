@@ -99,6 +99,13 @@
       </dependency>
 
 
+      <dependency>
+          <groupId>com.sybase.jdbcx</groupId>
+          <artifactId>jconn3</artifactId>
+          <version>6.0</version>
+      </dependency>
+
+
       <!--
       http://blog.csdn.net/mr_tank_/article/details/12159297
       <dependency>

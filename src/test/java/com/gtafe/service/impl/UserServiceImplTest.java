@@ -10,6 +10,9 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Desc:
@@ -18,7 +21,7 @@ import java.util.Date;
  * Time: 下午1:53
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:WEB-INF/spring-mvc-servlet.xml","classpath:applicationContext.xml"})
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring-mvc-servlet.xml","classpath:applicationContext.xml"})
 public class UserServiceImplTest extends AbstractJUnit4SpringContextTests {
 
     @Autowired
@@ -29,45 +32,64 @@ public class UserServiceImplTest extends AbstractJUnit4SpringContextTests {
         User user = new User();
         user.setUsername("li");
         user.setPassword("123456");
-        user.setBirthday(new Date());
         user.setUserAge(28);
         user.setUserAddress("深圳");
+        user.setBirthday(new Date());
         userService.addUser(user);
     }
 
     @Test
     public void testDeleteUser() throws Exception {
-
+        userService.deleteUser(1);
     }
 
     @Test
     public void testFindAllUser() throws Exception {
-
+        List<User> allUser = userService.findAllUser();
+        for(User user: allUser){
+            System.out.println(user);
+        }
     }
 
     @Test
     public void testLogin() throws Exception {
+        Map map = new HashMap();
+        map.put("username","li");
+        map.put("password","123456");
+        User login = userService.login(map);
+        System.out.println(login);
 
     }
 
     @Test
     public void testSelectUserByID() throws Exception {
+        User user = userService.selectUserByID(4);
+        System.out.println(user);
 
     }
 
     @Test
     public void testSelectUsers() throws Exception {
-
+        List<User> username = userService.selectUsers("li");
+        for(User user : username){
+            System.out.println(user);
+        }
     }
 
     @Test
     public void testUpdateUser() throws Exception {
-
+        User user = new User();
+        user.setUsername("li");
+        user.setPassword("123456");
+        user.setUserAge(28);
+        user.setUserAddress("深圳");
+        user.setBirthday(new Date());
+        userService.updateUser(user);
     }
 
     @Test
     public void testGetDataByPage() throws Exception {
-
+        //userService.getDataByPage();
     }
 
     @Test
