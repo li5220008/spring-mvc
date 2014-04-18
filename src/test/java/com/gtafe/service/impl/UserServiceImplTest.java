@@ -1,5 +1,6 @@
 package com.gtafe.service.impl;
 
+import com.gtafe.BaseTest;
 import com.gtafe.model.User;
 import com.gtafe.service.IUserService;
 import org.junit.Test;
@@ -20,9 +21,7 @@ import java.util.Map;
  * Date: 14-4-17
  * Time: 下午1:53
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring-mvc-servlet.xml","classpath:applicationContext.xml"})
-public class UserServiceImplTest extends AbstractJUnit4SpringContextTests {
+public class UserServiceImplTest extends BaseTest {
 
     @Autowired
     IUserService userService;

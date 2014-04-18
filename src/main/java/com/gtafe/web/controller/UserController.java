@@ -1,7 +1,10 @@
 package com.gtafe.web.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Desc:
@@ -12,4 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    @RequestMapping(value = {"/login"}, method = {RequestMethod.GET})
+    public ModelAndView login() {
+        ModelAndView mv = new ModelAndView();
+        return mv;
+    }
 }
