@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--1.mybatis-config.xml 是 mybatis 用来建立 sessionFactory 用的，
+里面主要包含了数据库连接相关东西，还有 java 类所对应的别名，比如 <typeAlias alias="User"
+ type="com.yihaomen.mybatis.model.User"/> 这个别名非常重要，你在 具体的类的映射中，
+ 比如User.xml 中 resultType 就是对应这里的。要保持一致  
+ 
+ 数据源交给了spring，映射文件也有spring的sqlSessionFactory中配置，所以在configuration只用配置实体类的别名就行了
+ -->
+<configuration>
+ <typeAliases> 
+        <typeAlias alias="User" type="com.gtafe.model.User"/>
+    </typeAliases>  
+</configuration>

@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         version="3.0">
-
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
-        <servlet-name>spring-mvc</servlet-name>
+        <servlet-name>spring3mvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 如果不写这个init标签及其内容，那么SpringMVC的相关配置就要写在  
+               与<servlet-name>中的内容一致的xml里 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:applicationContext.xml</param-value>
+            <!-- 这里是配置文件的路径 -->
+            <param-value>classpath*:/applicationContext.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
-
     <servlet-mapping>
-        <servlet-name>spring-mvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>spring3mvc</servlet-name>
+        <!-- url-pattern里的内容的意思代表：告诉程序什么样格式的url地址才能算是action，  
+               并往action里走。对于我这里写的*.action的话，当我输入类似于findAll.action  
+               这样的url时，才会让程序开始寻找相应的action -->
+        <url-pattern>*.action</url-pattern>
     </servlet-mapping>
-    <filter>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>utf-8</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

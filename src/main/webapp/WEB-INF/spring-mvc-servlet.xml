@@ -32,7 +32,7 @@
     <mvc:annotation-driven />
 
     <!--处理器-->
-    <bean name="/hello" class="com.gtafe.web.controller.HelloWorldController"/>
+    <!--<bean name="/hello" class="com.gtafe.web.controller.HelloWorldController"/>-->
 </beans>
 
 <!--

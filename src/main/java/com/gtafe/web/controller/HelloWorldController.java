@@ -22,7 +22,7 @@ public class HelloWorldController implements Controller {
         ModelAndView mv = new ModelAndView();
         //添加模型数据 可以是任意的POJO对象
         mv.addObject("message", "Hello World!!");
-        mv.setViewName("hello");
+        mv.setViewName("hello.action");
         return mv;
     }
 }

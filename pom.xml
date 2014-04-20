@@ -106,6 +106,19 @@
       </dependency>
 
 
+      <dependency>
+          <groupId>dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+          <version>1.6</version>
+      </dependency>
+      <!--这个包解决xpath表达式解析，没有则报java.lang.NoClassDefFoundError: org/jaxen/JaxenException-->
+      <dependency>
+          <groupId>jaxen</groupId>
+          <artifactId>jaxen</artifactId>
+          <version>1.1</version>
+      </dependency>
+
+
       <!--
       http://blog.csdn.net/mr_tank_/article/details/12159297
       <dependency>
