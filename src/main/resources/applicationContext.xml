@@ -14,7 +14,6 @@
 
     <!-- 引入jdbc配置文件 -->
     <context:property-placeholder location="classpath:dataSource.properties" />
-
     <!--创建jdbc数据源 -->
     <bean id="dataSource" destroy-method="close"
           class="org.apache.commons.dbcp.BasicDataSource"
@@ -55,14 +54,10 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <mvc:resources mapping="/public/**" location="/public/"/>
 
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.gtafe.dao" />
     </bean>
-
-   <!-- <bean id="lalaMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.mapper.ILalaMapper"/>
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-    </bean>-->
 </beans>

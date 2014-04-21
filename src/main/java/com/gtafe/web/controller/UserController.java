@@ -25,7 +25,7 @@ public class UserController {
         return mv;
     }
 
-    @RequestMapping("/registerPost")
+    @RequestMapping("/registerDo")
     public ModelAndView registerPost(HttpServletRequest request,HttpServletResponse response){
 
         ModelAndView mv = new ModelAndView();

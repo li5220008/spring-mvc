@@ -21,7 +21,7 @@
         <!-- url-pattern里的内容的意思代表：告诉程序什么样格式的url地址才能算是action，  
                并往action里走。对于我这里写的*.action的话，当我输入类似于findAll.action  
                这样的url时，才会让程序开始寻找相应的action -->
-        <url-pattern>*.action</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
