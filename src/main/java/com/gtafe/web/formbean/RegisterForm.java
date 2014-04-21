@@ -1,5 +1,6 @@
 package com.gtafe.web.formbean;
 
+import com.sun.istack.internal.NotNull;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import java.util.Map;
  * Created by free on 14-3-1.
  */
 public class RegisterForm {
+    @NotNull()
     private String username;
     private String password;
     private String repassword;
@@ -84,7 +86,7 @@ public class RegisterForm {
         this.checkcode = checkcode;
     }
 
-    public boolean validate() {
+    /*public boolean validate() {
         boolean isOk = true;
         if (this.username == null || "".equals(this.username.trim())) {
             isOk = false;
@@ -108,7 +110,7 @@ public class RegisterForm {
             isOk = false;
             errors.put("repassword", "确认秘密不能为空！");
         }else{
-            if(!this.repassword.equals(this.password)/*this.repassword != this.password*/){
+            if(!this.repassword.equals(this.password)*//*this.repassword != this.password*//*){
                 isOk = false;
                 errors.put("repassword", "两次秘密输入不一致！");
             }
@@ -154,12 +156,12 @@ public class RegisterForm {
             isOk = false;
             errors.put("checkcode", "昵称不能为空");
         }else {
-            /*if(!this.nickname.matches("[\u4e00-\u9fa5]+")){
+            *//*if(!this.nickname.matches("[\u4e00-\u9fa5]+")){
                 isOk = false;
                 errors.put("nickname", "昵称必须是中文字符！");
-            }*/
+            }*//*
 
         }
         return isOk;
-    }
+    }*/
 }

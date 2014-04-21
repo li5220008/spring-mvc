@@ -12,6 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Time: 下午4:53
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring-mvc-servlet.xml","classpath:applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class BaseTest extends AbstractJUnit4SpringContextTests {
 }

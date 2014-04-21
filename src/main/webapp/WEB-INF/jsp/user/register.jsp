@@ -12,7 +12,7 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap core CSS -->
-    <link href="/html/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/style/bootstrap.css" rel="stylesheet">
     <link href="/public/style/common.css" rel="stylesheet">
     <link href="/public/style/validate/style.css" rel="stylesheet"/>
 
@@ -25,7 +25,7 @@
 </head>
 <body>
 <div class="container">
-    <form id="register-form" class="form-register form-horizontal" role="form" action="${pageContext.request.contextPath}/user/register/do" method="post">
+    <form id="register-form" class="form-register form-horizontal" role="form" action="${pageContext.request.contextPath}/user/registerDo" method="post">
         <div class="form-group">
             <label for="username" class="col-sm-3 control-label">用户名：</label>
             <div class="col-sm-5">

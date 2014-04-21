@@ -57,7 +57,6 @@ public class UserServiceImplTest extends BaseTest {
         map.put("password","123456");
         User login = userService.login(map);
         System.out.println(login);
-
     }
 
     @Test

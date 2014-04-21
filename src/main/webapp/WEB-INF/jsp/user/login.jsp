@@ -18,7 +18,7 @@
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/html/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/style/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/public/style/signin.css" rel="stylesheet">
@@ -45,7 +45,7 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>--%>
-    <form action="${pageContext.request.contextPath}/user/login/do" method="post" class="form-signin" role="form">
+    <form action="${pageContext.request.contextPath}/user/loginDo" method="post" class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" name="username" value="${user.username}" class="form-control" placeholder="用户名" required autofocus />
         <input type="text" name="password" value="${user.password}" class="form-control" placeholder="密码" required/>

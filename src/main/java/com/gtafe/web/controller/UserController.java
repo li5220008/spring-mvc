@@ -1,13 +1,20 @@
 package com.gtafe.web.controller;
 
+import com.gtafe.utils.WebUtils;
+import com.gtafe.web.formbean.LoginForm;
+import com.gtafe.web.formbean.RegisterForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 /**
  * Desc:
@@ -19,16 +26,21 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/register")
-    public ModelAndView register(){
-        ModelAndView mv = new ModelAndView();
-        return mv;
+    @RequestMapping(value={"/register"}, method = RequestMethod.GET)
+    public String register(){
+        return "/user/register";
     }
 
-    @RequestMapping("/registerDo")
-    public ModelAndView registerPost(HttpServletRequest request,HttpServletResponse response){
-
+    @RequestMapping(value={"/registerDo"}, method = RequestMethod.POST)
+    public ModelAndView registerPost(@Valid @ModelAttribute("form") RegisterForm form, Errors errors) {
         ModelAndView mv = new ModelAndView();
+
+        if(errors.hasErrors()){
+            mv.setViewName("/user/register");
+            mv.addObject(form);
+        }else {
+            mv.setViewName("/user/login");
+        }
         return mv;
     }
 
@@ -51,8 +63,20 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public ModelAndView login() {
+    public String login() {
+        return "/user/login";
+    }
+
+    @RequestMapping(value = {"/loginDo"}, method = RequestMethod.POST)
+    public ModelAndView loginDo(@Valid @ModelAttribute("form") LoginForm form, Errors errors) {
         ModelAndView mv = new ModelAndView();
+        if (errors.hasErrors()) {
+            mv.addObject("form",form);
+            mv.addObject("errors",errors);
+            mv.setViewName("/user/login");
+        }else {
+            mv.setViewName("/user/register");
+        }
         return mv;
     }
 
