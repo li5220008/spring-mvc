@@ -5,6 +5,7 @@ import com.gtafe.web.formbean.LoginForm;
 import com.gtafe.web.formbean.RegisterForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,12 +33,12 @@ public class UserController {
     }
 
     @RequestMapping(value={"/registerDo"}, method = RequestMethod.POST)
-    public ModelAndView registerPost(@Valid @ModelAttribute("form") RegisterForm form, Errors errors) {
+    public ModelAndView registerPost(@Valid RegisterForm loginForm, Errors errors) {
         ModelAndView mv = new ModelAndView();
 
         if(errors.hasErrors()){
             mv.setViewName("/user/register");
-            mv.addObject(form);
+            mv.addObject("form",loginForm);
         }else {
             mv.setViewName("/user/login");
         }
@@ -63,21 +64,28 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public String login() {
-        return "/user/login";
+    public ModelAndView login() {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject(new LoginForm());
+        return mv;
     }
 
     @RequestMapping(value = {"/loginDo"}, method = RequestMethod.POST)
-    public ModelAndView loginDo(@Valid @ModelAttribute("form") LoginForm form, Errors errors) {
-        ModelAndView mv = new ModelAndView();
+    public String loginDo(@Valid LoginForm form, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/user/login";
+        } else {
+            return "/user/register";
+        }
+
+        /*ModelAndView mv = new ModelAndView();
         if (errors.hasErrors()) {
-            mv.addObject("form",form);
-            mv.addObject("errors",errors);
+            mv.addObject(form);
             mv.setViewName("/user/login");
         }else {
             mv.setViewName("/user/register");
         }
-        return mv;
+        return mv;*/
     }
 
     @RequestMapping("/blog")

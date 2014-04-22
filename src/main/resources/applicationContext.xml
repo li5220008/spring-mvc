@@ -54,18 +54,23 @@
     <!-- 添加注解驱动 -->
     <mvc:annotation-driven />
 
+    <!-- bind your messages.properties -->
+    <bean class="org.springframework.context.support.ResourceBundleMessageSource"
+          id="messageSource">
+        <property name="basename" value="messages" />
+    </bean>
 
-    <!--消息属性文件-->
+    <!--&lt;!&ndash;消息属性文件&ndash;&gt;
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:messages"/>
     </bean>
-    <!--以下validator ConversionService 在使用mvc:annotation-driven 会自动注册-->
+    &lt;!&ndash;以下validator ConversionService 在使用mvc:annotation-driven 会自动注册&ndash;&gt;
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
-        <!-- 如果不加默认到使用classpath下的ValidationMessages.properties -->
+        &lt;!&ndash; 如果不加默认到使用classpath下的ValidationMessages.properties &ndash;&gt;
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
-    <!--<bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+    <bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
         <property name="conversionService" ref="conversionService"/>
         <property name="validator" ref="validator"/>
     </bean>-->

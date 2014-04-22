@@ -1,5 +1,11 @@
 package com.gtafe.web.formbean;
 
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -10,8 +16,10 @@ import javax.validation.constraints.Size;
  */
 public class LoginForm {
 
-    @Size(max=64)
+    @Size(min = 4, max = 14)
     String username;
+    @Email
+    @Range(min =20, max = 30)
     String password;
     String checkcode;
 
@@ -36,6 +44,15 @@ public class LoginForm {
     }
 
     public void setCheckcode(String checkcode) {
+        this.checkcode = checkcode;
+    }
+
+    public LoginForm() {
+    }
+
+    public LoginForm(String username, String password, String checkcode) {
+        this.username = username;
+        this.password = password;
         this.checkcode = checkcode;
     }
 }

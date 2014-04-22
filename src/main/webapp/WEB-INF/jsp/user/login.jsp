@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +33,19 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .error {
+            color: #ff0000;
+        }
+
+        .errorblock {
+            color: #000;
+            background-color: #ffEEEE;
+            border: 3px solid #ff0000;
+            padding: 8px;
+            margin: 16px;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,16 +60,19 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>--%>
-    <form action="${pageContext.request.contextPath}/user/loginDo" method="post" class="form-signin" role="form">
+    <form:form action="${pageContext.request.contextPath}/user/loginDo" method="post" commandName="loginForm" cssClass="form-signin" role="form">
+        <%--<form:errors path="*" cssClass="errorblock" element="div" />--%>
+
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" name="username" value="${user.username}" class="form-control" placeholder="用户名" required autofocus />
-        <input type="text" name="password" value="${user.password}" class="form-control" placeholder="密码" required/>
-        <%--<input type="submit" value="登陆"><input type="button" onclick="location.href='${pageContext.request.contextPath}/user/register/ui'" value="注册"/>--%>
+        <form:input path="username" type="text" cssClass="form-control" placeholder="用户名" />
+        <form:errors path="username"/>
+        <form:input path="password" type="text" cssClass="form-control" placeholder="密码" />
+        <form:errors path="password"/>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+    </form:form>
 </div> <!-- /container -->
 <!-- Bootstrap core JavaScript
 ================================================== -->
