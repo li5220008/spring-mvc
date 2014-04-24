@@ -3,6 +3,7 @@ package com.gtafe.service.impl;
 import com.gtafe.BaseTest;
 import com.gtafe.model.User;
 import com.gtafe.service.IUserService;
+import com.gtafe.utils.ServiceUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class UserServiceImplTest extends BaseTest {
         user.setUsername("li");
         user.setPassword("123456");
         user.setUserAge(28);
-        user.setUserAddress("深圳");
+        user.setUserAddress(null);
         user.setBirthday(new Date());
         userService.addUser(user);
     }
@@ -87,6 +88,8 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testGetDataByPage() throws Exception {
+        String s = ServiceUtils.md5("123456");
+        System.out.println(s);
         //userService.getDataByPage();
     }
 

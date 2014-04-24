@@ -1,8 +1,10 @@
 package com.gtafe.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.gtafe.utils.ServiceUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,9 +18,11 @@ import com.gtafe.service.IUserService;
 public class UserServiceImpl implements IUserService {
 
 	@Autowired
-    IUserOperation userMapper;
+    private IUserOperation userMapper;
 
 	public void addUser(User user) {
+        //md5加密
+        user.setPassword(ServiceUtils.md5(user.getPassword()));
 		userMapper.addUser(user);
 	}
 
@@ -31,7 +35,11 @@ public class UserServiceImpl implements IUserService {
 		return userList;
 	}
 
-	public User login(Map map) {	  
+	public User login(String username,String password) {
+        password = ServiceUtils.md5(password);
+        Map map = new HashMap();
+        map.put("username",username);
+        map.put("password",password);
 		return  userMapper.login(map);
 	}
 

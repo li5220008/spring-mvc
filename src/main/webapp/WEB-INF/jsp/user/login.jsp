@@ -51,23 +51,15 @@
 <body>
 
 <div class="container">
-    <%--<form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>--%>
-    <form:form action="${pageContext.request.contextPath}/user/loginDo" method="post" commandName="loginForm" cssClass="form-signin" role="form">
-        <%--<form:errors path="*" cssClass="errorblock" element="div" />--%>
+    <%--SpringMvc会自动绑定数据--%>
+    <form:form action="${pageContext.request.contextPath}/user/loginDo" method="post" commandName="form" cssClass="form-signin" role="form">
+        <form:errors path="*" cssClass="errorblock" element="div" />
 
         <h2 class="form-signin-heading">Please sign in</h2>
         <form:input path="username" type="text" cssClass="form-control" placeholder="用户名" />
-        <form:errors path="username"/>
-        <form:input path="password" type="text" cssClass="form-control" placeholder="密码" />
-        <form:errors path="password"/>
+        <form:errors path="username" cssClass="error"/>
+        <form:input path="password" autocomplete="off" type="text" cssClass="form-control" placeholder="密码" />
+        <form:errors path="password" cssClass="error"/>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>

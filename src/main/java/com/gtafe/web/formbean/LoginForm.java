@@ -16,10 +16,9 @@ import javax.validation.constraints.Size;
  */
 public class LoginForm {
 
-    @Size(min = 4, max = 14)
+    @NotEmpty
     String username;
-    @Email
-    @Range(min =20, max = 30)
+    @NotEmpty
     String password;
     String checkcode;
 

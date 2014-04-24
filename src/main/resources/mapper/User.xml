@@ -38,7 +38,7 @@
        --> 
     <insert id="addUser" parameterType="User"> 
         insert into tb_user(username,password,userAge,userAddress,birthday)
-             values(#{username},#{password},#{userAge},#{userAddress},#{birthday})
+             values(#{username},#{password},#{userAge},#{userAddress,jdbcType=VARCHAR},#{birthday})
     </insert>
     
     <update id="updateUser" parameterType="User" >

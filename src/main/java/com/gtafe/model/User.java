@@ -6,11 +6,21 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private String nickname;
     private int userAge;
     private String userAddress;
     private Date birthday;
-    
-	public int getId() {
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -48,16 +58,11 @@ public class User {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", userAge=" + userAge +
-                ", userAddress='" + userAddress + '\'' +
-                ", birthday=" + birthday +
-                '}';
+    public String getNickname() {
+        return nickname;
     }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
 }

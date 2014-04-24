@@ -8,7 +8,7 @@ import com.gtafe.model.User;
 
 public interface IUserService {
 	   public User selectUserByID(int id);   
-	    public User login(Map map);
+	    public User login(String username,String password);
 	    public List<User> findAllUser();
 	    public List<User> selectUsers(String userName);    
 	    public void addUser(User user);
