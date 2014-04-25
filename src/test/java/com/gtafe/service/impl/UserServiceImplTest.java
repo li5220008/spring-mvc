@@ -33,7 +33,7 @@ public class UserServiceImplTest extends BaseTest {
         user.setUsername("li");
         user.setPassword("123456");
         user.setUserAge(28);
-        user.setUserAddress(null);
+        user.setUserAddress("深圳");
         user.setBirthday(new Date());
         userService.addUser(user);
     }
@@ -53,10 +53,7 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testLogin() throws Exception {
-        Map map = new HashMap();
-        map.put("username","li");
-        map.put("password","123456");
-        User login = userService.login(map);
+        User login = userService.login("li","123456");
         System.out.println(login);
     }
 
@@ -69,10 +66,8 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testSelectUsers() throws Exception {
-        List<User> username = userService.selectUsers("li");
-        for(User user : username){
-            System.out.println(user);
-        }
+        List<User> username = userService.selectUsers("admin");
+        System.out.println(username);
     }
 
     @Test

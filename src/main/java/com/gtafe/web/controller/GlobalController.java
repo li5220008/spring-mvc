@@ -1,7 +1,11 @@
 package com.gtafe.web.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Desc: 全局入口
@@ -11,11 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class GlobalController {
-    @RequestMapping("index")
-    public String index() {
+    @RequestMapping("/index")
+    public String index(Model model, HttpSession session) {
+        model.addAttribute("account",session.getAttribute("account"));
         return "index";
     }
-    @RequestMapping("message")
+
+    @RequestMapping("/message")
     public String message() {
         return "message";
     }

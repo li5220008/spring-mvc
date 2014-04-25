@@ -52,7 +52,7 @@
 
 <div class="container">
     <%--SpringMvc会自动绑定数据--%>
-    <form:form action="${pageContext.request.contextPath}/user/loginDo" method="post" commandName="form" cssClass="form-signin" role="form">
+    <form:form action="${pageContext.request.contextPath}/user/loginDo" method="post" commandName="loginForm" cssClass="form-signin" role="form">
         <form:errors path="*" cssClass="errorblock" element="div" />
 
         <h2 class="form-signin-heading">Please sign in</h2>
