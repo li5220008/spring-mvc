@@ -23,7 +23,6 @@ create table tb_user (
    birthday             date                           null,
    nickname             varchar(50)                    null,
    email                varchar(40)                    null
-
 )
 with identity_gap = 1
 go

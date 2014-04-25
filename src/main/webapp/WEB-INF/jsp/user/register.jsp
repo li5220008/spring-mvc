@@ -83,7 +83,7 @@
         <div class="form-group">
             <label class="col-sm-3 control-label"></label>
             <div class="col-sm-9">
-                <img src="${pageContext.request.contextPath}/random/img" alt="点击刷新" class="img-rounded" style="cursor: pointer" onclick="changeImg(this)">
+                <img src="${pageContext.request.contextPath}/randomImg" alt="点击刷新" class="img-rounded" style="cursor: pointer" onclick="changeImg(this)">
             </div>
         </div>
         <div class="form-group">

@@ -33,6 +33,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <script src="/public/js/common.js"></script>
     <style>
         .error {
             color: #ff0000;
@@ -45,6 +46,11 @@
             padding: 8px;
             margin: 16px;
         }
+        
+        /*.img{
+            width:300px;
+            height: 40px;            
+        }*/
     </style>
 </head>
 
@@ -60,6 +66,8 @@
         <form:errors path="username" cssClass="error"/>
         <form:input path="password" autocomplete="off" type="text" cssClass="form-control" placeholder="密码" />
         <form:errors path="password" cssClass="error"/>
+        <img src="${pageContext.request.contextPath}/randomImg" alt="点击刷新" class="img-rounded img" style="cursor: pointer" onclick="changeImg(this)">
+        <input class="form-control" type="text" id="checkcode" placeholder="认证码" name="checkcode" value="${form.checkcode}"/>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
