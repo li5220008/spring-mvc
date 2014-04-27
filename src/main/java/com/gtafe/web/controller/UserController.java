@@ -53,7 +53,10 @@ public class UserController {
             WebUtils.copyBean(loginForm, user);
             System.out.println(user);
             service.addUser(user);
-            attr.addFlashAttribute("message", "注册成功！");
+            Message message = new Message();
+            message.setMessage("恭喜你，注册成功！");
+            message.setUri("/user/login");
+            attr.addFlashAttribute("message",message);
             mv.setViewName("redirect:/message");
         }
         return mv;
