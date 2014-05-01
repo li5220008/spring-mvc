@@ -37,8 +37,8 @@
                useGeneratedKeys="true" keyProperty="uid"
        --> 
     <insert id="addUser" parameterType="User"> 
-        insert into tb_user(username,password,userAge,userAddress,birthday)
-             values(#{username},#{password},#{userAge},#{userAddress,jdbcType=VARCHAR},#{birthday})
+        insert into tb_user(username,password,userAge,userAddress,birthday,nickname,email)
+             values(#{username},#{password},#{userAge},#{userAddress,jdbcType=VARCHAR},#{birthday},#{nickname},#{email})
     </insert>
     
     <update id="updateUser" parameterType="User" >

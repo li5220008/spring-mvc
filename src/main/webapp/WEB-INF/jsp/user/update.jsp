@@ -1,9 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 14-2-24
-  Time: 上午10:50
+  User: free
+  Date: 5/1/14
+  Time: 8:46 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    head<br/>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

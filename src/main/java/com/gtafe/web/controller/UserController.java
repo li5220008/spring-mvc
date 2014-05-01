@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.jar.Attributes;
 
 /**
@@ -63,21 +64,21 @@ public class UserController {
     }
 
     @RequestMapping("/delete")
-    public ModelAndView delete() {
-        ModelAndView mv = new ModelAndView();
-        return mv;
+    public String delete(int id) {
+        service.deleteUser(id);
+        return "redirect:/user/list";
     }
 
     @RequestMapping("/update")
-    public ModelAndView update() {
-        ModelAndView mv = new ModelAndView();
-        return mv;
+    public String update() {
+        return "update";
     }
 
     @RequestMapping("/list")
-    public ModelAndView list() {
-        ModelAndView mv = new ModelAndView();
-        return mv;
+    public String list(Model model) {
+        List<User> allUser = service.findAllUser();
+        model.addAttribute("users",allUser);
+        return "/user/list";
     }
 
     @RequestMapping("/login")

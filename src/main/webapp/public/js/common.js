@@ -43,3 +43,12 @@ function commentCancel(){
         $(".comment-cancel").css("display","none");
     });
 }
+
+function delConfirm(message,url){
+    this.message  = message ? message : "你确定要这样做吗？";
+    if(confirm(this.message)){
+        return true;
+    }else{
+        return false;
+    }
+}

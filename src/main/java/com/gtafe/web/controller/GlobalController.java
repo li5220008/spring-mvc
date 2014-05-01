@@ -40,4 +40,15 @@ public class GlobalController {
         resp.setHeader("Pragma","no-cache");
         ImgUtils.randomImg(resp.getOutputStream());
     }
+
+    @RequestMapping("/head")
+    public String head(){
+        return "head";
+    }
+
+
+    @RequestMapping("/main")
+    public String foot(){
+        return "main";
+    }
 }

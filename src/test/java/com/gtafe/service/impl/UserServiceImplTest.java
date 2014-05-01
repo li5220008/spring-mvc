@@ -30,7 +30,7 @@ public class UserServiceImplTest extends BaseTest {
     @Test
     public void testAddUser() throws Exception {
         User user = new User();
-        user.setUsername("li");
+        user.setUsername("li20008");
         user.setPassword("123456");
         user.setUserAge(28);
         user.setUserAddress("深圳");
