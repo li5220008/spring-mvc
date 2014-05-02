@@ -21,7 +21,8 @@
 </head>
 <body>
 <div class="container">
-    <form id="register-form" class="form-register form-horizontal"  role="form" action="${pageContext.request.contextPath}/user/registerDo" method="post">
+    <form id="update-form" class="form-register form-horizontal"  role="form" action="${pageContext.request.contextPath}/user/updateDo" method="post">
+        <input type="hidden" name="id" value="${form.id}"/>
         <div class="form-group">
             <label for="username" class="col-sm-3 control-label">用户名：</label>
             <div class="col-sm-5">
@@ -52,7 +53,7 @@
         <div class="form-group">
             <label for="repassword" class="col-sm-3 control-label">重复密码：</label>
             <div class="col-sm-5">
-                <input class="form-control" type="password" id="repassword" placeholder="重置密码" name="repassword" value="${form.repassword}"/>
+                <input class="form-control" type="password" id="repassword" placeholder="重复密码" name="repassword" value="${form.repassword}"/>
             </div>
             <div class="col-sm-4">
                 <label class="control-label error">${form.errors.repassword}</label>
@@ -77,26 +78,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label"></label>
-            <div class="col-sm-9">
-                <img src="${pageContext.request.contextPath}/randomImg" alt="点击刷新" class="img-rounded" style="cursor: pointer" onclick="changeImg(this)">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="checkcode" class="col-sm-3 control-label">认证码：</label>
-            <div class="col-sm-5">
-                <input class="form-control" type="text" id="checkcode" placeholder="认证码" name="checkcode" value="${form.checkcode}"/>
-            </div>
-            <div class="col-sm-4">
-                <label class="control-label error">${form.errors.checkcode}</label>
-            </div>
-            <%--<div class="col-sm-3">
-                <label class="control-label error">${form.errors.checkcode}</label>
-            </div>--%>
-        </div>
-        <div class="form-group">
             <div class="col-sm-offset-3 col-sm-2">
-                <button type="submit" class="btn btn-primary btn-default btn-block">注 册</button>
+                <button type="submit" class="btn btn-primary btn-default btn-block">update</button>
             </div>
         </div>
     </form>
@@ -118,6 +101,6 @@
 </div>--%>
 </body>
 </html>
+<%@include file="/WEB-INF/jsp/main.jsp"%>
 <script src="/public/js/validate/jquery.validate.min.js"></script>
 <script src="/public/js/validate/script.js"></script>
-<%@include file="/WEB-INF/jsp/main.jsp"%>

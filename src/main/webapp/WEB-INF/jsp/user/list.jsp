@@ -37,7 +37,7 @@
                 <td>${user.userAddress}</td>
                 <td>${user.birthday}</td>
                 <td>${user.email}</td>
-                <td><a href="/user/json" class=""> info </a>
+                <td><a href="/user/info?id=${user.id}"> info </a>
                     <a href="/user/register"> add </a>
                     <a href="/user/update?id=${user.id}"> update </a>
                     <a href="/user/delete?id=${user.id}" onclick="return delConfirm('sure to delete?')"> delete </a>

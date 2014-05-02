@@ -45,8 +45,8 @@ public class UserServiceImpl implements IUserService {
 
 	public User selectUserByID(int id) {
 		// TODO Auto-generated method stub
-
-		return null;
+        User user = userMapper.selectUserByID(id);
+        return user;
 	}
 
 	public List<User> selectUsers(String userName) {
@@ -55,8 +55,9 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	public void updateUser(User user) {
+        user.setPassword(ServiceUtils.md5(user.getPassword()));
+        userMapper.updateUser(user);
 		// TODO Auto-generated method stub
-
 	}
     public List<User> getDataByPage(Map map){
     	return userMapper.getDataByPage(map);

@@ -11,7 +11,6 @@
 // http://docs.jquery.com/Plugins/Validation/
 // http://docs.jquery.com/Plugins/Validation/validate#toptions
 $(document).ready(function(){
-
     /**
      * 自定义中文
      */
@@ -35,7 +34,7 @@ $(document).ready(function(){
         return  ( value.trim()==""|| /^[0-9]{6}$/.test(value));
     }, "请输入正确的邮编");
 
-		$('#register-form').validate({
+		$('#update-form').validate({
             rules: {
                 "nickname": {
                     required:true,
@@ -238,7 +237,6 @@ $(document).ready(function(){
             //element.parent().parent().find(".new_user_tips").hide();;
             label.parent().html("OK").removeClass("tips_error").addClass("tips_ok").parent();
         },
-
         errorPlacement: function(error, element) {
             element.parent().parent().find(".new_user_tips").show();
             //console.log('1.000:', element);
@@ -247,5 +245,4 @@ $(document).ready(function(){
             //console.log(targetElement)
         }
     });
-
 }); // end document.ready

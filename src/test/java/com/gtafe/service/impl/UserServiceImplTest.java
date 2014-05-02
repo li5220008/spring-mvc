@@ -73,10 +73,13 @@ public class UserServiceImplTest extends BaseTest {
     @Test
     public void testUpdateUser() throws Exception {
         User user = new User();
+        user.setId(5);
         user.setUsername("li");
         user.setPassword("123456");
         user.setUserAge(28);
         user.setUserAddress("深圳");
+        user.setEmail("li522008@163.com");
+        user.setNickname("kk");
         user.setBirthday(new Date());
         userService.updateUser(user);
     }

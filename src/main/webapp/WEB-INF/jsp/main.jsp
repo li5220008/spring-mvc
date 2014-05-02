@@ -16,7 +16,5 @@
 <!--jquery插件-->
 <script src="/public/js/jquery-1.8.0.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/public/js/application.js"></script>
-<!--<script src="/public/js/bootstrap.min.js"></script>-->
-<script src="/html/metro/docs/bootstrap.js"></script>
+<%--<script src="/public/js/application.js"></script>--%>
 <script src="${pageContext.request.contextPath}/public/js/common.js"></script>

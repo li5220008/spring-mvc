@@ -3,19 +3,18 @@ package com.gtafe.web.controller;
 import com.gtafe.dto.Message;
 import com.gtafe.model.User;
 import com.gtafe.service.IUserService;
+import com.gtafe.utils.DateUtils;
 import com.gtafe.utils.WebUtils;
 import com.gtafe.web.formbean.LoginForm;
 import com.gtafe.web.formbean.RegisterForm;
+import com.gtafe.web.formbean.UpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -23,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.text.ParseException;
 import java.util.List;
 import java.util.jar.Attributes;
 
@@ -72,15 +72,24 @@ public class UserController {
     @RequestMapping("/update")
     public String update(int id,Model model) {
         User user = service.selectUserByID(id);
-        RegisterForm form = new RegisterForm();
+        UpdateForm form = new UpdateForm();
         WebUtils.copyBean(user,form);
-        model.addAttribute(form);
+        form.setPassword("");
+        try {
+            form.setBirthday(DateUtils.formatDate(user.getBirthday()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("form",form);
         return "/user/update";
     }
 
     @RequestMapping("/updateDo")
-    public String updateDo(Model model,RegisterForm form) {
-        return "/user/register";
+    public String updateDo(Model model, UpdateForm form) {
+        User user = new User();
+        WebUtils.copyBean(form,user);
+        service.updateUser(user);
+        return "redirect:/user/list";
     }
 
     @RequestMapping("/list")
@@ -88,6 +97,12 @@ public class UserController {
         List<User> allUser = service.findAllUser();
         model.addAttribute("users",allUser);
         return "/user/list";
+    }
+
+    @RequestMapping("/info")
+    public @ResponseBody User info(int id,Model model) {
+        User user = service.selectUserByID(id);
+        return user;
     }
 
     @RequestMapping("/login")

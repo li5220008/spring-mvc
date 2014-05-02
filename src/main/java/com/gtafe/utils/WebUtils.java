@@ -64,6 +64,22 @@ public class WebUtils {
                 }
             }
         },Date.class);
+
+        //注册日期转换器(formate)
+        /*ConvertUtils.register(new Converter() {
+            public Object convert(Class tClass, Object o) {
+                Date value = (Date)o;
+                if(value==null){
+                    return null;
+                }
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    return sdf.format(value);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        },String.class);*/
         try {
             BeanUtils.copyProperties(dest,src);
         } catch (Exception e) {
