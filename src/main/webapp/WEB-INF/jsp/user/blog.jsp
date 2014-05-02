@@ -35,7 +35,7 @@
     <![endif]-->
 </head>
 <body>
-<%@include file="/WEB-INF/jsp/head.jsp"%>
+<%@include file="/WEB-INF/jsp/navbar.jsp"%>
 
 <!-- Docs page layout -->
 <!--<div class="bs-header" id="content">

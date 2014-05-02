@@ -32,6 +32,14 @@
           p:maxIdle="30"
           p:maxWait="1000"
           p:poolPreparedStatements="true"
+          p:validationQuery="SELECT 1"
+          p:testWhileIdle="true"
+          p:testOnBorrow="false"
+          p:timeBetweenEvictionRunsMillis="30000"
+          p:minEvictableIdleTimeMillis="1800000"
+          p:numTestsPerEvictionRun="3"
+          p:removeAbandoned="true"
+          p:removeAbandonedTimeout="180"
           p:defaultAutoCommit="true">
     </bean>
 

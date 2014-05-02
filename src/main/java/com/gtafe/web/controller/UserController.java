@@ -70,8 +70,17 @@ public class UserController {
     }
 
     @RequestMapping("/update")
-    public String update() {
-        return "update";
+    public String update(int id,Model model) {
+        User user = service.selectUserByID(id);
+        RegisterForm form = new RegisterForm();
+        WebUtils.copyBean(user,form);
+        model.addAttribute(form);
+        return "/user/update";
+    }
+
+    @RequestMapping("/updateDo")
+    public String updateDo(Model model,RegisterForm form) {
+        return "/user/register";
     }
 
     @RequestMapping("/list")

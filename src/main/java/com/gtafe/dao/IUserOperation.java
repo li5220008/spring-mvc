@@ -23,8 +23,7 @@ public interface IUserOperation {
     public List<User> selectUsers(String userName);    
     public void addUser(User user);
     public void updateUser(User user);
-    public void deleteUser(int id); 
-    
+    public void deleteUser(int id);
     public List<User> getDataByPage(Map map);
     public int getDataCount(String sql);
 }

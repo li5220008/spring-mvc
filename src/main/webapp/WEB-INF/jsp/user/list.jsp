@@ -12,7 +12,7 @@
     <title></title>
 </head>
 <body>
-<%@include file="/WEB-INF/jsp/head.jsp"%>
+<%@include file="/WEB-INF/jsp/navbar.jsp"%>
 <div class="container">
     <table class="table table-hover <%--table-bordered--%> table-responsive">
         <thead>
@@ -39,7 +39,7 @@
                 <td>${user.email}</td>
                 <td><a href="/user/json" class=""> info </a>
                     <a href="/user/register"> add </a>
-                    <a href="/user/update"> update </a>
+                    <a href="/user/update?id=${user.id}"> update </a>
                     <a href="/user/delete?id=${user.id}" onclick="return delConfirm('sure to delete?')"> delete </a>
                 </td>
             </tr>

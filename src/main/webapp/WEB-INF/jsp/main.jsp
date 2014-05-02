@@ -7,12 +7,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/public/style/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/common.css">
-    <!-- Custom styles for this template -->
-    <link href="/public/style/navbar-fixed-top.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="/public/style/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/common.css">
+<!-- Custom styles for this template -->
+<link href="/public/style/navbar-fixed-top.css" rel="stylesheet">
 
 <!--jquery插件-->
 <script src="/public/js/jquery-1.8.0.js"></script>

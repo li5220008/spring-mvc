@@ -4,7 +4,6 @@ import com.gtafe.utils.ImgUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +42,7 @@ public class GlobalController {
 
     @RequestMapping("/head")
     public String head(){
-        return "head";
+        return "navbar";
     }
 
 

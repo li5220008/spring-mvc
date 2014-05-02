@@ -59,7 +59,7 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testSelectUserByID() throws Exception {
-        User user = userService.selectUserByID(4);
+        User user = userService.selectUserByID(5);
         System.out.println(user);
 
     }
