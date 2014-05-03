@@ -126,6 +126,6 @@
 <script src="/public/js/jquery-1.8.0.js"></script>
 <script src="/public/js/common.js"></script>
 <script src="/public/js/validate/jquery.validate.min.js"></script>
-<script src="/public/js/validate/script.js"></script>
+<script src="/public/js/validate/custom.validate.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>

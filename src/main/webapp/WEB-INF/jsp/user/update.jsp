@@ -103,4 +103,4 @@
 </html>
 <%@include file="/WEB-INF/jsp/main.jsp"%>
 <script src="/public/js/validate/jquery.validate.min.js"></script>
-<script src="/public/js/validate/script.js"></script>
+<script src="/public/js/validate/custom.validate.js"></script>
