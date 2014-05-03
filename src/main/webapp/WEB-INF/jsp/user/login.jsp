@@ -66,11 +66,11 @@
         <form:errors path="username" cssClass="error"/>
         <form:input path="password" autocomplete="off" type="text" cssClass="form-control" placeholder="密码" />
         <form:errors path="password" cssClass="error"/>
-        <img src="${pageContext.request.contextPath}/randomImg" alt="点击刷新" class="img-rounded img" style="cursor: pointer" onclick="changeImg(this)">
+        <%--<img src="${pageContext.request.contextPath}/randomImg" alt="点击刷新" class="img-rounded img" style="cursor: pointer" onclick="changeImg(this)">
         <input class="form-control" type="text" id="checkcode" placeholder="认证码" name="checkcode" value="${form.checkcode}"/>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
-        </label>
+        </label>--%>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form:form>
 </div> <!-- /container -->
