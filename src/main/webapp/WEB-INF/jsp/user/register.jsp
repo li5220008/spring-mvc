@@ -15,13 +15,6 @@
     <link href="/public/style/bootstrap.css" rel="stylesheet">
     <link href="/public/style/common.css" rel="stylesheet">
     <link href="/public/style/validate/style.css" rel="stylesheet"/>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -65,7 +58,7 @@
         <div class="form-group">
             <label for="birthday" class="col-sm-3 control-label">生日：</label>
             <div class="col-sm-5">
-                <input class="form-control" type="text" id="birthday" placeholder="生日" name="birthday" value="${form.birthday}" />
+                <input class="form-control" type="text" id="birthday" placeholder="生日" onClick="WdatePicker()" name="birthday" value="${form.birthday}" />
             </div>
             <div class="col-sm-4">
                 <label class="control-label error">${form.errors.birthday}</label>
@@ -127,5 +120,7 @@
 <script src="/public/js/common.js"></script>
 <script src="/public/js/validate/jquery.validate.min.js"></script>
 <script src="/public/js/validate/custom.validate.js"></script>
+<script src="/public/js/My97DatePicker/WdatePicker.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
