@@ -341,4 +341,5 @@ $(document).ready(function(){
             //console.log(targetElement)
         }
     });
+
 }); // end document.ready
