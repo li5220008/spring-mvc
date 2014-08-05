@@ -1,4 +1,4 @@
-package com.gtafe.interceptor;
+package com.gtafe.web.interceptor;
 
 import com.gtafe.model.User;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
