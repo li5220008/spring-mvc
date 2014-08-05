@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.gtafe.dao.IUserDao;
 import com.gtafe.utils.ServiceUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gtafe.dao.IUserOperation;
 import com.gtafe.model.User;
 import com.gtafe.service.IUserService;
 
@@ -18,7 +18,7 @@ import com.gtafe.service.IUserService;
 public class UserServiceImpl implements IUserService {
 
 	@Autowired
-    private IUserOperation userMapper;
+    private IUserDao userMapper;
 
 	public void addUser(User user) {
         //md5加密

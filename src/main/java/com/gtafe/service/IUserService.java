@@ -7,15 +7,15 @@ import com.gtafe.model.User;
 
 
 public interface IUserService {
-	   public User selectUserByID(int id);   
-	    public User login(String username,String password);
-	    public List<User> findAllUser();
-	    public List<User> selectUsers(String userName);    
-	    public void addUser(User user);
-	    public void updateUser(User user);
-	    public void deleteUser(int id); 
-	    public int addUserList(List<User> userList) throws Exception;
+	    User selectUserByID(int id);
+	    User login(String username,String password);
+	    List<User> findAllUser();
+	    List<User> selectUsers(String userName);
+	    void addUser(User user);
+	    void updateUser(User user);
+	    void deleteUser(int id);
+	    int addUserList(List<User> userList) throws Exception;
 	    
-	    public List<User> getDataByPage(Map map);
-	    public int getDataCount(String sql);
+	    List<User> getDataByPage(Map map);
+	    int getDataCount(String sql);
 }
