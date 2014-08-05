@@ -1,6 +1,13 @@
 package com.gtafe.web.formbean;
 
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,10 +16,15 @@ import java.util.Map;
  */
 public class RegisterForm {
 
+    /*@NotNull(message = "用户名不能为空")
+    @Length(min=5, max=20, message="用户名长度必须在5-20之间")
+    @Pattern(regexp = "^[a-zA-Z_]\\w{4,19}$", message = "用户名必须以字母下划线开头，可由字母数字下划线组成")*/
     private String username;
     private String password;
+    //@Size(min = 2, max = 14)
     private String repassword;
     private String nickname;
+    //@Email(message = "邮箱格式不正确")
     private String email;
     private String birthday;
     private Map errors = new HashMap();

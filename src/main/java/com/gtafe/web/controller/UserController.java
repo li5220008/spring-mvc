@@ -49,6 +49,7 @@ public class UserController {
         if (errors.hasErrors()) {
             mv.setViewName("register");
             mv.addObject("form", loginForm);
+            mv.setViewName("/user/register");
         } else {
             User user = new User();
             WebUtils.copyBean(loginForm, user);

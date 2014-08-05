@@ -27,20 +27,7 @@
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"
           p:password="${jdbc.password}"
-          p:initialSize="20"
-          p:maxActive="100"
-          p:maxIdle="30"
-          p:maxWait="1000"
-          p:poolPreparedStatements="true"
-          p:validationQuery="SELECT 1"
-          p:testWhileIdle="true"
-          p:testOnBorrow="false"
-          p:timeBetweenEvictionRunsMillis="30000"
-          p:minEvictableIdleTimeMillis="1800000"
-          p:numTestsPerEvictionRun="3"
-          p:removeAbandoned="true"
-          p:removeAbandonedTimeout="180"
-          p:defaultAutoCommit="true">
+          >
     </bean>
     <context:property-placeholder location="classpath:dataSource.properties"/>
     <!--创建jdbc数据源 -->
@@ -59,7 +46,7 @@
         <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
     </bean>
 
-    <!-- 扫描com这个包里的所有类，把里面配上相应注解的类全都放在容器中进行管理 -->
+    <!-- 扫描com这个包里的所有类，把里面带有相应注解的类全都放在容器中进行管理 -->
     <context:component-scan base-package="com.gtafe"/>
     <!-- 添加注解驱动 -->
     <mvc:annotation-driven/>
@@ -93,6 +80,7 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--告诉Spring不需要拦截的静态资源文件-->
     <mvc:resources mapping="/public/**" location="/public/" cache-period="31556926"/>
 
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->

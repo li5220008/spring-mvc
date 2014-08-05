@@ -15,6 +15,24 @@
     <link href="/public/style/bootstrap.css" rel="stylesheet">
     <link href="/public/style/common.css" rel="stylesheet">
     <link href="/public/style/validate/style.css" rel="stylesheet"/>
+    <style>
+        .error {
+            color: #ff0000;
+        }
+
+        .errorblock {
+            color: #000;
+            background-color: #ffEEEE;
+            border: 3px solid #ff0000;
+            padding: 8px;
+            margin: 16px;
+        }
+
+        /*.img{
+            width:300px;
+            height: 40px;
+        }*/
+    </style>
 </head>
 <body>
 <div class="container">
@@ -91,6 +109,15 @@
                 <label class="control-label error">${form.errors.checkcode}</label>
             </div>--%>
         </div>
+        <%--<div class="form-group">
+            <label for="username" class="col-sm-3 control-label">后台错误消息：</label>
+            <div class="col-sm-5">
+                <form:errors path="*" cssClass="errorblock" element="div" />
+            </div>
+            <div class="col-sm-4">
+                <label  class="control-label error">${form.errors.username}</label>
+            </div>
+        </div>--%>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-2">
                 <button type="submit" class="btn btn-primary btn-default btn-block">注 册</button>

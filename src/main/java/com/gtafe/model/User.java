@@ -15,19 +15,15 @@ public class User {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
 	public int getUserAge() {
 		return userAge;
 	}
@@ -64,7 +60,6 @@ public class User {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
     @Override
     public String toString() {
         return "User{" +

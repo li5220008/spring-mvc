@@ -40,7 +40,7 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testDeleteUser() throws Exception {
-        userService.deleteUser(1);
+        userService.deleteUser(4);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testSelectUserByID() throws Exception {
-        User user = userService.selectUserByID(5);
+        User user = userService.selectUserByID(1);
         System.out.println(user);
 
     }
