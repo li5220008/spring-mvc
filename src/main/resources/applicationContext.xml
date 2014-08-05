@@ -16,7 +16,9 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-3.0.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+
+        >
 
     <!-- 引入jdbc配置文件 -->
     <bean id="dataSource" destroy-method="close"
@@ -40,32 +42,32 @@
           p:removeAbandonedTimeout="180"
           p:defaultAutoCommit="true">
     </bean>
-    <context:property-placeholder location="classpath:dataSource.properties" />
+    <context:property-placeholder location="classpath:dataSource.properties"/>
     <!--创建jdbc数据源 -->
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!-- 创建SqlSessionFactory，同时指定数据源 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
         <!-- 所有配置的mapper文件 -->
-        <property name="mapperLocations" value="classpath*:mapper/*.xml" />
+        <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
     </bean>
 
     <!-- 扫描com这个包里的所有类，把里面配上相应注解的类全都放在容器中进行管理 -->
     <context:component-scan base-package="com.gtafe"/>
     <!-- 添加注解驱动 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
     <!-- bind your messages.properties -->
     <bean class="org.springframework.context.support.ResourceBundleMessageSource"
           id="messageSource">
-        <property name="basename" value="messages" />
+        <property name="basename" value="messages"/>
     </bean>
 
     <!--&lt;!&ndash;消息属性文件&ndash;&gt;
@@ -88,13 +90,13 @@
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个
               可用的url地址 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
-    <mvc:resources mapping="/public/**" location="/public/" cache-period="31556926" />
+    <mvc:resources mapping="/public/**" location="/public/" cache-period="31556926"/>
 
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.gtafe.dao" />
+        <property name="basePackage" value="com.gtafe.dao"/>
     </bean>
 </beans>

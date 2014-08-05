@@ -1,6 +1,5 @@
 package com.gtafe.web.formbean;
 
-import com.sun.istack.internal.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,6 @@ import java.util.Map;
  * Created by free on 14-3-1.
  */
 public class UpdateForm {
-    @NotNull()
     private int id;
     private String username;
     private String password;

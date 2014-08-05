@@ -1,7 +1,5 @@
 package com.gtafe.web.formbean;
 
-import com.sun.istack.internal.NotNull;
-import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +8,7 @@ import java.util.Map;
  * Created by free on 14-3-1.
  */
 public class RegisterForm {
-    @NotNull()
+
     private String username;
     private String password;
     private String repassword;

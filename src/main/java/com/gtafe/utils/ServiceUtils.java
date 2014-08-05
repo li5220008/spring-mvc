@@ -1,7 +1,6 @@
 package com.gtafe.utils;
 
 
-import sun.misc.BASE64Encoder;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -20,17 +19,17 @@ public class ServiceUtils {
      * @return
      */
     public static String md5(String message) {
-        try {
+        /*try {
             if(message == null) return null;
             //获取一个消息加密算法
             MessageDigest md = MessageDigest.getInstance("md5");
             //把消息转换成字节数组，进行加密
             byte[] digest = md.digest(message.getBytes());
-            /*(不安全)
+            *//*(不安全)
             //新建一个BASE64编码器
             BASE64Encoder encoder = new BASE64Encoder();
             //对字节数组进行BASE64编码
-            return encoder.encode(digest);*/
+            return encoder.encode(digest);*//*
             int i;
             StringBuffer buf = new StringBuffer("");
             for (int offset = 0; offset < digest.length; offset++) {//做相应的转化（十六进制）
@@ -45,6 +44,8 @@ public class ServiceUtils {
             return buf.toString();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
-        }
+        }*/
+
+        return  null;
     }
 }

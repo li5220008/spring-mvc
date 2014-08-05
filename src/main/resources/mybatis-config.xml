@@ -9,7 +9,20 @@
  数据源交给了spring，映射文件也有spring的sqlSessionFactory中配置，所以在configuration只用配置实体类的别名就行了
  -->
 <configuration>
- <typeAliases> 
+    <settings>
+        <!-- 启用全局映射器的缓存-->
+        <setting name="cacheEnabled" value="false"/>
+        <!-- 是否启用自动驼峰映射配置-->
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <!-- 空值默认null来处理不需要全部指定jdbcType=VARCHAR -->
+        <setting name="jdbcTypeForNull" value="VARCHAR"/>
+        <!-- lazyLoadingEnabled：true使用延迟加载，false禁用延迟加载。 aggressiveLazyLoading：true启用时，
+        当延迟加载开启时访问对象中一个懒对象属性时，将完全加载这个对象的所有懒对象属性。 false，当延迟加载时，
+        按需加载对象属性（即访问对象中一个懒对象属性，不会加载对象中其他的懒对象属性）。默认为true  add by 柯典佑 -->
+        <setting name="lazyLoadingEnabled" value="true" />
+
+    </settings>
+    <typeAliases>
         <typeAlias alias="User" type="com.gtafe.model.User"/>
     </typeAliases>  
 </configuration>
