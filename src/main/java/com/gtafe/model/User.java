@@ -1,6 +1,7 @@
 package com.gtafe.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private int id;
@@ -11,6 +12,7 @@ public class User {
     private String userAddress;
     private Date birthday;
     private String email;
+    List<Object> obj;
 
     public String getEmail() {
         return email;

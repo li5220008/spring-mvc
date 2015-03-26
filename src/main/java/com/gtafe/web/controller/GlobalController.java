@@ -1,6 +1,7 @@
 package com.gtafe.web.controller;
 
 import com.gtafe.utils.ImgUtils;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,7 +47,7 @@ public class GlobalController {
     }
 
 
-    @RequestMapping("/main")
+    @RequestMapping("/foot")
     public String foot(){
         return "main";
     }
