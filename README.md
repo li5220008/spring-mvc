@@ -21,4 +21,4 @@ my spring mvc app
         cn.free.web.UI (给用户提供用户界面)
         cn.free.utils
         junit.test(test.java)
-        WEB-INF/jsp 保存网站所有jsr
+        WEB-INF/jsp 保存网站所有js
